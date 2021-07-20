@@ -1,7 +1,7 @@
 export default function manageQuotes(state = [], action) {
-  let idx = state.findIndex(quote => quote.id === action);
+  let idx = state.findIndex(quote => quote.id === action.id);
   let quotes = [...state];
-  let q = quotes.find(quote => quote.id === action)
+  let q = quotes.find(quote => quote.id === action.id)
   // debugger
   switch (action.type) {
 
