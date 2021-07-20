@@ -7,13 +7,14 @@ class Quotes extends Component {
 
 
 
-  createQuotes = () => {
-    return this.props.quotes.map(quote => {
-      return < QuoteCard key={quote.id} quote={quote} removeQuote={removeQuote} upvoteQuote={upvoteQuote} downvoteQuote={downvoteQuote}/>
-    })
-  }
+  // createQuotes = () => {
+  //   return this.props.quotes.map(quote => {
+  //     return < QuoteCard key={quote.id} quote={quote} removeQuote={removeQuote} upvoteQuote={upvoteQuote} downvoteQuote={downvoteQuote}/>
+  //   })
+  // }
 
   render() {
+    const { quotes, removeQuote, upvoteQuote, downvoteQuote } = this.props;
     return (
       <div>
         <hr />
@@ -24,7 +25,7 @@ class Quotes extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-4">
-              {this.createQuotes()}
+              {quotes.map(quote => < QuoteCard key={quote.id} quote={quote} removeQuote={removeQuote} upvoteQuote={upvoteQuote} downvoteQuote={downvoteQuote}/>)}
             </div>
           </div>
         </div>
